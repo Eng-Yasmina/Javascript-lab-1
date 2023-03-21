@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasmine-ITI-CMS</title>
+</head>
+<body>
+    <script>
+    /**
+     * Defines Global Variables
+     */
+
+    let response1 = '';
+    // Check if the input name is empty or contains any numbers from 0 to 9
+    while (response1==='' || /[0-9]/.test(response1)) {
+        response1 = prompt('Please enter your name', '');
+    }
+    let response2 = '';
+    // Check if the input phone number is empty or string or bigger then 8 digits
+    while (response2==='' ||  !(/[0-9]{8}/.test(response2))) {
+        response2 = prompt('Please enter your phone number', '');
+    } 
+    let response3 = '';
+    // Check if the input mobile number is empty or not starting with 01 or bigger then 11 digits
+    while (response3==='' ||  !(/^\(?([0]{1})\)?[1]?([0-2]{1})?([0-9]{8})$/.test(response3))) {
+        response3 = prompt('Please enter your mobile number', '');
+    } 
+    let response4 = '';
+    // Check if the input mobile number is empty or not starting with 01 or bigger then 11 digits
+    while (response4==='' ||  !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(response4))) {
+        response4 = prompt('Please enter your email', '');
+    } 
+
+    // BONUS ----------------------------------------------------------------
+    let response5 = prompt('Please choose your favorite color :)', 'Red  -  Green  -  Blue');
+    let color = '';
+    let flag=1;
+    switch (response5) {
+        case "Red":
+        case "red":
+        case "RED":
+            color = response5;
+            break;
+        case "Green":
+        case "green":
+        case "GREEN":
+            color = response5;
+            break;
+        case "Blue":
+        case "blue":
+        case "BLUE":
+            color = response5;
+            break;
+    
+        default:
+            flag=0;
+            alert('Please choose from the given colors :)');
+            break;
+    }
+
+    /**
+     * End Global Variables
+     */
+    if(flag) {
+    document.write(`<table style="position:fixed; left:40%; top: 30%">
+                            <tr >
+                                <td>
+                                    <h1 style="color: ${color};">Welcome dear guest</h1>
+                                </td>
+                                <td>
+                                    <h2>${response1}</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h1 style="color: ${color};">your phone number is</h1>
+                                </td>
+                                <td>
+                                    <h2>${response2}</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h1 style="color: ${color};">your mobile number is</h1>
+                                </td>
+                                <td>
+                                    <h2>${response3}<h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h1 style="color: ${color};">your email address is</h1>
+                                </td>
+                                <td>
+                                    <h2>${response4}<h3>
+                                </td>
+                            </tr>
+                    </table>`);    
+                }
+    </script>
+</body>
+</html>
